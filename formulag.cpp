@@ -18,14 +18,25 @@ int main()
     if(fg(a,b,c,x1,x2)==0)
         cout<<"Hay error!";
     else 
-        cout<<x1<<x2;
+        cout<<x1<<endl<<x2;
 
     return 0;
 }
 int fg(int a, int b, int c, float &x1, float &x2)
 {
-    x1=(-b+sqrt(pow(b,2)-(4*a*c))/(2*a));
-    x2=(-b-sqrt(pow(b,2)-(4*a*c))/(2*a));
-    return x1,x2;
+    int d;
+    d=pow(b, 2);
+    d=d-(4*a*c);
+    if(d<0)
+    {
+    return 0;
+    }
+    else
+    {
+    x1=(-b+(sqrt(d)))/(2*a);
+    x2=(-b-sqrt(d))/(2*a);
+    return 1;
+    }
+ 
     
 }
