@@ -6,6 +6,8 @@ int mostrar(int vector[], int tam);
 int suma(int vector[], int tam);
 int mostrarinverso(int vector[], int tam);
 int girararriba(int vector[], int tam);
+int girarabajo(int vector[], int tam);
+int invertir(int vector[], int tam);
 
 int main()
 {
@@ -17,8 +19,16 @@ int main()
     suma(vector, tam);
     cout<<"La suma es "<<suma(vector, tam)<<endl;
     cout<<"Inverso"<<endl;
-    mostrarinverso(vector,tam);
-    //girararriba(vector[],tam);
+    mostrarinverso(vector, tam);
+    cout<<"Girar arriba"<<endl;
+    girararriba(vector, tam);
+    mostrar(vector, tam);
+    cout<<"Girar abajo"<<endl;
+    girarabajo(vector, tam);
+    mostrar(vector, tam);
+    cout<<"Invertir"<<endl;
+    invertir(vector, tam);
+    mostrar(vector, tam);
     return 0;
 }
 
@@ -43,5 +53,27 @@ int suma(int vector[], int tam){
 int mostrarinverso(int vector[], int tam){
     for(int i=tam-1;i>=0;i--){
         cout<<"["<<i<<"]"<<vector[i]<<endl;
+    }
+}
+int girararriba(int vector[], int tam){
+    int aux=vector[0];
+    for(int i=0;i<tam-1;i++){
+        vector[i]=vector[i+1];
+    }
+    vector[tam-1]=aux;
+}
+int girarabajo(int vector[], int tam){
+    int aux=vector[tam-1];
+    for(int i=tam-1;i>0;i--){
+        vector[i]=vector[i-1];
+    }
+    vector[0]=aux;
+}
+int invertir(int vector[], int tam){
+    int aux=vector[0];
+    for(int i=0,j=tam-1;i<tam/2;i++,j--){
+        aux=vector[i];
+        vector[i]=vector[j];
+        vector[j]=aux;
     }
 }
