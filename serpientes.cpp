@@ -3,12 +3,12 @@
 
 using namespace std;
 int lanzardado();
-
+int llenarvector(int vector[], int tam);
 int main()
 {
     int vector[101];
     int j1=0,j2=0;
-    int llenar vector(vector, 101);
+    llenarvector(vector, 101);
     while(j1<100 && j2<100)
     {
         j1+=lanzardado();
@@ -30,4 +30,11 @@ int lanzardado()
     dado=rand()%6+1;
    
     return dado;
+}
+int llenarvector(vector[], int tam){
+    for(int i=1; i<100;i++){
+        vector[i]=0;
+    }
+    vector[2]=6;
+    vector[9]=-5;
 }
