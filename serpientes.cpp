@@ -12,11 +12,13 @@ int main()
     while(j1<100 && j2<100)
     {
         j1+=lanzardado();
-        if
+        if(j1<100){
         j1+=vector[j1];
+        }
         j2+=lanzardado();
-        if
+        if(j2<100){
         j2+=vector[j2];
+        }
     }
 
     return 0;
